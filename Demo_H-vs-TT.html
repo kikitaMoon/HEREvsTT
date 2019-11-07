@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- General-->
+    <meta name="author" content="Sharon Mu - Sr Technical Support Engineer, HERE Technologies">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <title>Map comparison between HERE and TomTom</title>
+
+    <!-- HERE Map -->
+    <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
+
+    <!-- TomTom map -->
+    <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/5.x/5.38.0/examples/sdk/web-sdk-maps/maps.css'/>
+    <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/5.x/5.38.0/examples/pages/examples/styles/main.css'/>
+    <script type="text/javascript" src="https://api.tomtom.com/maps-sdk-for-web/5.x/5.38.0/examples/sdk/web-sdk-maps/maps-web.min.js"></script>
+    <script type="text/javascript" src="https://api.tomtom.com/maps-sdk-for-web/5.x/5.38.0/examples/pages/examples/assets/js/mobile-or-tablet.js"></script>
+
+    
+    
+</head>
+
+<!--
+    21.02889, 105.85464 Hanoi
+    20.86575, 106.68572 Hai Phong
+    10.77642, 106.70111 Ho Chi Minh
+    16.07466, 108.22364 Da Nang
+    10.03659, 105.78753 Can Tho
+    20.80459, 106.8719 Huyen Cat Hai
+    -->
+
+<body style="font-family:Helvetica; font-size:12px;">
+
+    <div>
+        <h2>Map comparison between HERE and TomTom</h2>
+
+        <p>
+            <!-- Move to City: -->
+            <!-- <select id="city" onchange="moveMapToCity()">
+                <option value="20.80459,106.87190">Huyen Cat Hai (Island)</option>
+                <option value="21.02889,105.85464">Hanoi</option>
+                <option value="20.86575,106.68572">Hai Phong</option>
+                <option value="10.77642,106.70111">Ho Chi Minh</option>
+                <option value="16.07466,108.22364">Da Nang</option>
+                <option value="10.03659,105.78753">Can Tho</option>
+            </select> -->
+
+            <!-- &nbsp;|&nbsp; -->
+
+            Pan To: <input id="coordinates" type="text" value="20.80459,106.87190">
+            &nbsp;Zoom Level: <input id="zoomlevel" type="number" value="14" min="2" max="18">
+            <button type="submit" onclick="moveMapToCoordinates()">Submit</button>
+        </p>
+
+        <p>Pan or Zoom +/- HERE maps on the left, TomTom Maps on the right will change according to HERE maps.
+            <!-- <br><span style="color:red;">Note: TomTom Maps API is using a demo apikey with very limit transactions
+                (per minute). If the transactions exceeds the limit, please wait a moment and try again.</span></p> -->
+    </div>
+
+    <div>
+        <div id="here" style="position:absolute; width:49%; height:70%; overflow:none"></div>
+        <div id="TomTom" style="position:absolute; width:49%; height:70%; left:50%; overflow:none; pointer-events:none;"></div>
+    </div>
+
+    <script src="scripts/app.js"></script>
+
+</body>
+
+</html>
